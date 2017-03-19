@@ -1,0 +1,25 @@
+{
+  "name": "myapp",
+  "version": "1.0.0",
+  "description": "Testing for now",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/basketballhero/myapp.git"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "Rajan Saini",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/basketballhero/myapp/issues"
+  },
+  "homepage": "https://github.com/basketballhero/myapp#readme",
+  "dependencies": {
+    "express": "^4.15.0"
+  }
+}
