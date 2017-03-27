@@ -1,3 +1,1 @@
-$(document).ready(function(){
-  $('#main').css("color", "red");
-});
+var socket = io();
