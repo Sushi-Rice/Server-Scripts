@@ -1,7 +1,7 @@
 $(function () {
   var socket = io();
   
-  $('form').submit(function(){
+  $('#button').click(function(){
     socket.emit('submission');
     return false;
   });
