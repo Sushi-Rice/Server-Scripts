@@ -13,6 +13,9 @@ app.get('/', function (req, res) {
 
 io.on('connection', function (socket) {
   console.log('a user connected');
+  socket.on('submission', function(){
+  console.log('the button has been clicked');
+});
   socket.on('disconnect', function(){
      console.log('a user disconnected');
   });
@@ -20,6 +23,4 @@ io.on('connection', function (socket) {
 
 app.use(express.static(__dirname + '/public'));
 
-io.on('submission', function(){
-  console.log('the button has been clicked');
-});
+
