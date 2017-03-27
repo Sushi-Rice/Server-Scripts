@@ -2,7 +2,7 @@ $(function () {
   var socket = io();
   $(document).keydown(function(e){
     if (e.keyCode == 37) { 
-       alert( "left pressed" );
+       //Stuff to be done when "left" is pressed
        return false;
     }
 });
