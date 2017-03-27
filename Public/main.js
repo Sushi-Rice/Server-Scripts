@@ -1,11 +1,11 @@
 $(function () {
   var socket = io();
-  $(document).keypress(function(e){
-    if(e.which === 37){
-      socket.emit('left');
-      $('#main').css("color", "blue");
+  $(document).keydown(function(e){
+    if (e.keyCode == 37) { 
+       alert( "left pressed" );
+       return false;
     }
-  });
+});
   $('#button').click(function(){
     socket.emit('submission');
     $('#main').css("color", "red");
