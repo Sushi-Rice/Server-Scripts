@@ -17,6 +17,8 @@ io.on('connection', function (socket) {
   });
 });
 
+app.use(express.static(__dirname + '/public'));
+
 io.on('submission', function(){
   console.log('the button has been clicked');
 });
