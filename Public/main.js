@@ -12,7 +12,6 @@ $(function () {
     $('#main').css("color", "red");
     return false;
   });
-  //Not sure if this should be inside or outside the $ selector
   socket.on('changePos', function(position){
     //We need to do something with this; just a debugging placeholder
     alert(position);
