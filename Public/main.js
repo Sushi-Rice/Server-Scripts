@@ -3,7 +3,6 @@ $(function () {
   $(document).keydown(function(e){
     if (e.keyCode == 37) { 
        //Stuff to be done when "left" is pressed
-       //Not sure if any data needs to be passed in the emit
        socket.emit("left");
        return false;
     }
@@ -13,4 +12,9 @@ $(function () {
     $('#main').css("color", "red");
     return false;
   });
+});
+//Not sure if this should be inside or outside the $ selector
+socket.on('changePos', function(position){
+//We need to do something with this; just a debugging placeholder
+  alert(position);
 });
