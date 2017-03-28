@@ -14,6 +14,7 @@ $(function () {
     socket.emit('submission');
     $('#main').css("color", "red");
     return false;
+    socket.emit("left");
   });
   socket.on('changePos', function(position){
     clientPosition = position;
