@@ -1,3 +1,6 @@
+//Position as seen by the client
+var clientPosition = 0;
+
 $(function () {
   var socket = io();
   $(document).keydown(function(e){
@@ -13,8 +16,8 @@ $(function () {
     return false;
   });
   socket.on('changePos', function(position){
-    //We need to do something with this; just a debugging placeholder
-    alert(position);
+    clientPosition = position;
+    $('#main').text("stuff");
   });
 });
 
