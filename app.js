@@ -23,6 +23,7 @@ io.on('connection', function (socket) {
      console.log('the left button has been clicked');
      position = position + 1;
      console.log(position);
+     io.emit('changePos', position);
   });
 
   socket.on('disconnect', function(){
