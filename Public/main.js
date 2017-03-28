@@ -13,8 +13,9 @@ $(function () {
   $('#button').click(function(){
     socket.emit('submission');
     $('#main').css("color", "red");
-    return false;
     socket.emit("left");
+    return false;
+    
   });
   socket.on('changePos', function(position){
     clientPosition = position;
