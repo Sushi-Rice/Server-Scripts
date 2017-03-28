@@ -2,6 +2,7 @@ var app = require('express')();
 var express = require('express');
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
+var position = 0;
 
 server.listen(8081, function(){
 	console.log('listening on *:8081');
@@ -20,6 +21,8 @@ io.on('connection', function (socket) {
 	
   socket.on('left', function(){
      console.log('the left button has been clicked');
+     position = position + 1;
+     console.log(position);
   });
 
   socket.on('disconnect', function(){
