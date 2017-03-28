@@ -17,7 +17,7 @@ $(function () {
   });
   socket.on('changePos', function(position){
     clientPosition = position;
-    $('#main').text("stuff");
+    $('#main').text(clientPosition);
   });
 });
 
