@@ -17,6 +17,10 @@ io.on('connection', function (socket) {
   socket.on('submission', function(){
      console.log('the button has been clicked');
   });
+	
+  socket.on('left', function(){
+     console.log('the left button has been clicked');
+  });
 
   socket.on('disconnect', function(){
      console.log('a user disconnected');
