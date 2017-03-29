@@ -20,7 +20,14 @@ io.on('connection', function (socket) {
   ids.push(socket.id);
   console.log(socket.id);
 	
-  counters.push(0);
+  var myNumber = counters.length;
+  counters[myNumber] = 0;
+  
+  socket.on('clicked', function(){
+     counters[myNumber] += 1;
+     io.emit('posChanged', myNumber);
+  });
+	
   socket.emit('counterSending', counters);
   console.log(counters);
 	
