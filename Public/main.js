@@ -38,7 +38,7 @@ $(function () {
   });
   
   socket.on('counterUpdate', function(counters){
-    for(var i = 0; i < counters.length; i++){
+    for(var i = 0; i < 100; i++){
       $('#' + i.toString()).text(counters[i]);
     }
   });
