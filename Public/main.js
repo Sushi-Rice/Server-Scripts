@@ -37,5 +37,11 @@ $(function () {
     }
   });
   
+  socket.on('counterUpdate', function(counters){
+    for(var i = 0; i < counters.length; i++){
+      $('#' + i.toString).text(counters[i]);
+    }
+  });
+  
 });
 
