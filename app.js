@@ -14,7 +14,8 @@ app.get('/', function (req, res) {
 
 io.on('connection', function (socket) {
   console.log('a user connected');
-  
+  socket.send(socket.id);
+  console.log(socket.id);
   socket.on('submission', function(){
      console.log('the button has been clicked');
   });
