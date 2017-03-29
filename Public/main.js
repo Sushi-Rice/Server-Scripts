@@ -5,22 +5,14 @@ $(function () {
   var socket = io();
   $(document).keydown(function(e){
     if (e.keyCode == 37) { 
-       //Stuff to be done when "left" is pressed
-       socket.emit("left");
+       socket.emit("clicked");   
        return false;
     }
 });
+  
   $('#button').click(function(){
-    socket.emit('submission');
-    $('#main').css("color", "red");
-    socket.emit("left");
     socket.emit("clicked");
-    return false;
-    
-  });
-  socket.on('changePos', function(position){
-    //clientPosition = position;
-    $('#main').text(position);
+    return false; 
   });
   
   socket.on('posChanged', function(myPlace, myCount, totLength){
