@@ -31,14 +31,14 @@ $(function () {
   
   socket.on('counterSending', function(counters){
     var iString;
-    for(var i = 0; i < counters.length; i++){
+    for(var i = 0; i < 100; i++){
       iString = i.toString();
       $('<p></p>', {id: iString}).appendTo(document.body).text(counters[i]);
     }
   });
   
   socket.on('counterUpdate', function(counters){
-    for(var i = 0; i < 100; i++){
+    for(var i = 0; i < counters.length; i++){
       $('#' + i.toString()).text(counters[i]);
     }
   });
