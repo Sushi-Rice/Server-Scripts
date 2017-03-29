@@ -21,6 +21,7 @@ io.on('connection', function (socket) {
   console.log(socket.id);
 	
   counters.push(0);
+  socket.emit('counterSending', counters);
   console.log(counters);
 	
   socket.on('submission', function(){
