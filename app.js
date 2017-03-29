@@ -25,7 +25,7 @@ io.on('connection', function (socket) {
   
   socket.on('clicked', function(){
      counters[myNumber] += 1;
-     io.emit('posChanged', myNumber);
+     io.emit('posChanged', myNumber, counters[myNumber]);
   });
 	
   socket.emit('counterSending', counters);
