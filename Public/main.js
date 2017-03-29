@@ -23,9 +23,15 @@ $(function () {
     $('#main').text(clientPosition);
   });
   
+  socket.on('posChanged', function(myPlace, myCount){
+    $('#' + myPlace.toString).text(myCount);
+  });
+  
   socket.on('counterSending', function(counters){
+    var iString;
     for(var i = 0; i < counters.length; i++){
-      $('<div></div>').appendTo(document.body).text(counters[i]);
+      iString = i.toString();
+      $('<div></div>', {id: iString}).appendTo(document.body).text(counters[i]);
     }
   });
   
