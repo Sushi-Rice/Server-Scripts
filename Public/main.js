@@ -21,5 +21,12 @@ $(function () {
     clientPosition = position;
     $('#main').text(clientPosition);
   });
+  
+  socket.on('counterSending', function(counters){
+    for(var i = 0; i < counters.length; i++){
+      $('<div></div>').appendTo(document.body).text(counters[i]);
+    }
+  });
+  
 });
 
