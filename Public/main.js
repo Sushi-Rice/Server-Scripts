@@ -27,6 +27,8 @@ $(function () {
     for(var i = 0; i < totLength; i++){
       $('#' + i.toString).text(myCount);
     }
+    
+    $('#' + myPlace.toString).text("swaaag");
   });
   
   socket.on('counterSending', function(counters){
