@@ -20,7 +20,7 @@ $(function () {
   });
   socket.on('changePos', function(position){
     //clientPosition = position;
-    $('#main').text(clientPosition);
+    $('#main').text(position);
   });
   
   socket.on('posChanged', function(myPlace, myCount, totLength){
