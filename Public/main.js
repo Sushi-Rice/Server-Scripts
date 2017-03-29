@@ -7,6 +7,9 @@ $(function () {
     if (e.keyCode == 37) { 
        socket.emit("clicked");   
        return false;
+    } else if(e.keyCode == 39) {
+       socket.emit("unClicked");
+       return false;
     }
 });
   
