@@ -28,6 +28,11 @@ io.on('connection', function (socket) {
      io.emit('posChanged', myNumber, counters[myNumber], counters.length);
   });
 	
+  socket.on('unClicked', function(){
+     counters[myNumber] -= 1;
+     io.emit('posChanged', myNumber, counters[myNumber], counters.length);
+  });
+	
   socket.emit('counterSending', counters);
   io.emit('counterUpdate', counters);
   console.log(counters);
