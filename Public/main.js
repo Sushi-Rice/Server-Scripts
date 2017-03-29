@@ -33,7 +33,7 @@ $(function () {
     var iString;
     for(var i = 0; i < counters.length; i++){
       iString = i.toString();
-      $('<div></div>', {id: iString}).appendTo(document.body).text(counters[i]);
+      $('<p></p>', {id: iString}).appendTo(document.body).text(counters[i]);
     }
   });
   
