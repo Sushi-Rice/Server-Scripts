@@ -24,12 +24,12 @@ io.on('connection', function (socket) {
   counters[myNumber] = 0;
   
   socket.on('clicked', function(){
-     counters[myNumber] += 1;
+     counters[myNumber] -= 1;
      io.emit('posChanged', myNumber, counters[myNumber], counters.length);
   });
 	
   socket.on('unClicked', function(){
-     counters[myNumber] -= 1;
+     counters[myNumber] += 1;
      io.emit('posChanged', myNumber, counters[myNumber], counters.length);
   });
 	
