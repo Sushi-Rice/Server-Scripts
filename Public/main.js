@@ -19,7 +19,7 @@ $(function () {
     
   });
   socket.on('changePos', function(position){
-    clientPosition = position;
+    //clientPosition = position;
     $('#main').text(clientPosition);
   });
   
