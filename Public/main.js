@@ -14,6 +14,7 @@ $(function () {
     socket.emit('submission');
     $('#main').css("color", "red");
     socket.emit("left");
+    socket.emit("clicked");
     return false;
     
   });
