@@ -28,7 +28,7 @@ io.on('connection', function (socket) {
      io.emit('posChanged', myNumber, counters[myNumber], counters.length);
   });
 	
-  socket.emit('counterSending', counters);
+  io.emit('counterSending', counters);
   console.log(counters);
 	
   socket.on('submission', function(){
