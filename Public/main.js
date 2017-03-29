@@ -23,8 +23,10 @@ $(function () {
     $('#main').text(clientPosition);
   });
   
-  socket.on('posChanged', function(myPlace, myCount){
-    $('#' + myPlace.toString).text(myCount);
+  socket.on('posChanged', function(myPlace, myCount, totLength){
+    for(var i = 0; i < totLength; i++){
+      $('#' + i.toString).text(myCount);
+    }
   });
   
   socket.on('counterSending', function(counters){
