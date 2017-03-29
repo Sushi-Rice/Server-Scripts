@@ -3,6 +3,8 @@ var express = require('express');
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 var position = 0;
+var ids = [];
+var counters = [3, 6, 9];
 
 server.listen(8081, function(){
 	console.log('listening on *:8081');
@@ -14,8 +16,13 @@ app.get('/', function (req, res) {
 
 io.on('connection', function (socket) {
   console.log('a user connected');
-  socket.send(socket.id);
+	
+  ids.push(socket.id);
   console.log(socket.id);
+	
+  counters.push(0);
+  console.log(counters);
+	
   socket.on('submission', function(){
      console.log('the button has been clicked');
   });
