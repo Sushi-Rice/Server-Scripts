@@ -31,17 +31,6 @@ io.on('connection', function (socket) {
   socket.emit('counterSending', counters);
   io.emit('counterUpdate', counters);
   console.log(counters);
-	
-  socket.on('submission', function(){
-     console.log('the button has been clicked');
-  });
-	
-  socket.on('left', function(){
-     console.log('the left button has been clicked');
-     position = position + 1;
-     console.log(position);
-     io.emit('changePos', position);
-  });
 
   socket.on('disconnect', function(){
      console.log('a user disconnected');
