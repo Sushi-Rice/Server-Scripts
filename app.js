@@ -2,7 +2,6 @@ var app = require('express')();
 var express = require('express');
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
-var position = 0;
 var counters = [false];
 
 server.listen(8081, function(){
