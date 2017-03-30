@@ -51,6 +51,7 @@ io.on('connection', function (socket) {
   console.log(counters);
 
   socket.on('disconnect', function(){
+     counters[myNumber] = false;
      console.log('a user disconnected');
   });
 });
