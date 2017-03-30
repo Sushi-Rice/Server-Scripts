@@ -4,7 +4,7 @@ var server = require('http').Server(app);
 var io = require('socket.io')(server);
 var position = 0;
 var ids = [];
-var counters = [1, 9, 7, false, 8];
+var counters = [false];
 
 server.listen(8081, function(){
 	console.log('listening on *:8081');
