@@ -3,7 +3,6 @@ var express = require('express');
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 var position = 0;
-var ids = [];
 var counters = [false];
 
 server.listen(8081, function(){
@@ -17,8 +16,6 @@ app.get('/', function (req, res) {
 io.on('connection', function (socket) {
   console.log('a user connected');
 	
-  ids.push(socket.id);
-  console.log(socket.id);
   var i = 0; 
   var exitLoop = false;
 	
@@ -33,7 +30,6 @@ io.on('connection', function (socket) {
      i++;
   }
 	
-  
   counters[myNumber] = 0;
   
   socket.on('clicked', function(){
