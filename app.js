@@ -25,7 +25,7 @@ io.on('connection', function (socket) {
   var myNumber = counters.length;
   //Two or one equal sign?
   while(!exitLoop){
-     if(counters[i] === false){
+     if(counters[i] === false || i === counters.length){
      	myNumber = i;
 	exitLoop = true;
 	console.log(i);
