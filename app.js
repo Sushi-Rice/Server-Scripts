@@ -4,7 +4,7 @@ var server = require('http').Server(app);
 var io = require('socket.io')(server);
 var position = 0;
 var ids = [];
-var counters = [0];
+var counters = [1, 9, 7, false, 8];
 
 server.listen(8081, function(){
 	console.log('listening on *:8081');
@@ -19,8 +19,21 @@ io.on('connection', function (socket) {
 	
   ids.push(socket.id);
   console.log(socket.id);
+  var i = 0; 
+  var exitLoop = false;
 	
   var myNumber = counters.length;
+  //Two or one equal sign?
+  while(!exitLoop){
+     if(counters[i] === false){
+     	myNumber = i;
+	exitLoop = true;
+	console.log(i);
+     }
+     i++;
+  }
+	
+  
   counters[myNumber] = 0;
   
   socket.on('clicked', function(){
