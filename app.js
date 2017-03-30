@@ -53,6 +53,7 @@ io.on('connection', function (socket) {
   socket.on('disconnect', function(){
      counters[myNumber] = false;
      console.log('a user disconnected');
+     io.emit('counterUpdate', counters);
   });
 });
 
