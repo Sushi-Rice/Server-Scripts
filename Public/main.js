@@ -4,10 +4,10 @@ var clientPosition = 0;
 $(function () {
   var socket = io();
   $(document).keydown(function(e){
-    if (e.keyCode == 37 || e.keyCode == 38) { 
+    if (e.keyCode == 37 || e.keyCode == 40) { 
        socket.emit("clicked");   
        return false;
-    } else if(e.keyCode == 39 || e.keyCode == 40) {
+    } else if(e.keyCode == 39 || e.keyCode == 38) {
        socket.emit("unClicked");
        return false;
     }
