@@ -38,7 +38,7 @@ $(function () {
       if(counters[i] === false){
         $('#' + i.toString()).css("display", "none");
       } else {
-        $('#' + i.toString()).css("display", "inline");
+        $('#' + i.toString()).css("display", "block");
       }
     }
   });
